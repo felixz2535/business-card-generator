@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Business Card Generator</title>
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    $(function(){
+        $('#result').hide()
+        $('#form').css({'background-color':'gray', 'border':'solid black 2px', 'padding': '10px', 'font-family':'',})
+      $('button').click(function(){
+          var name = $('#name').val();
+          $( "#myselect" ).val();
+        //   if ('myselect'== 'random'){
+        //     $('#result').css({'background-color':'white'})
+        //   } else if ('wild'){
+        //     $('#result').css({'background-color':'white'})
+        //   } else if ('bright'){
+        //     $('#result').css({'background-color':'white'})
+        //   } else if ('dark'){
+        //     $('#result').css({'background-color':'white'})
+        //   } else if ('plain'){
+        //     $('#result').css({'background-color':'white'})
+        //   } else (''){
+        //     $('#result').css({'background-color':'white'})
+        //   }
+          $('#form').fadeOut();
+          $('#result').fadeIn(1000);
+          $('#result').css({'background-color':'white', 'padding': '20px'});
+      })
+    });
+  </script>
+</head>
+<body>
+    <div id='form'>
+        <h2>Generator</h2>
+        Name:<input id=name><br>
+        <input id=><br>
+        <input id=><br>
+        <input id=><br>
+        <input id=><br>
+        <input id=><br>
+        <select id = 'myselect'><br>
+            <option value='random'>Random</option>
+            <option value='wild'>Wild</option>
+            <option value='bright'>Bright</option>
+            <option value='dark'>Dark</option>
+            <option value='plain'>Plain</option>
+            <option>Default</option>
+        </select><br>
+        <button>Comence</button>
+    </div>
+    
+    <p id='result'>Congrats</p>
+    <div id='result'>
+        <h1></h1>
+        <h2></h2>
+        <h3></h3>
+    </div>
+  
+</body>
+</html>
