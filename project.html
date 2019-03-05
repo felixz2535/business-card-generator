@@ -3,30 +3,67 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Business Card Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Slab|Lora|Nunito|Rubik" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
     $(function(){
-        $('#result').hide()
-        $('#form').css({'background-color':'gray', 'border':'solid black 2px', 'padding': '10px', 'font-family':'',})
+        $('#name').val('Bob');
+        $('#title').val('CEO of some company');
+        $('#email').val('email@whatever.com');
+        $('#phone').val('100000000');
+        $('#address').val('911');
+        $('#web').val('bestweb.com');
+        $('#result').hide();
+        $('#statement').css({'text-align':'center','font-size':'30px'}).hide()
+        $('#form').css({'background-color':'gray', 'background': 'linear-gradient(45deg, white 25%,#C9C9D4 25%, #C9C9D4 50%, white 50%, white 75%,#C9C9D4 75%', 'border':'solid black 2px', 'padding': '10px', 'font-family': 'Roboto Condensed', 'margin': 'auto', 'text-align': 'center', });
       $('button').click(function(){
+          
+         
           var name = $('#name').val();
-          $( "#myselect" ).val();
-        //   if ('myselect'== 'random'){
-        //     $('#result').css({'background-color':'white'})
-        //   } else if ('wild'){
-        //     $('#result').css({'background-color':'white'})
-        //   } else if ('bright'){
-        //     $('#result').css({'background-color':'white'})
-        //   } else if ('dark'){
-        //     $('#result').css({'background-color':'white'})
-        //   } else if ('plain'){
-        //     $('#result').css({'background-color':'white'})
-        //   } else (''){
-        //     $('#result').css({'background-color':'white'})
-        //   }
+          var title = $('#title').val();
+          var email = $('#email').val();
+          var phone = $('#phone').val();
+          var address = $('#address').val();
+          var web = $('#web').val();
+          var myselect = $('#myselect').val();
+          $('#result-name').html(name);
+          $('#result-title').html(title);
+          $('#result-email').html(email);
+          $('#result-phone').html(phone);
+          $('#result-address').html(address);
+          $('#result-web').html(web);
           $('#form').fadeOut();
           $('#result').fadeIn(1000);
-          $('#result').css({'background-color':'white', 'padding': '20px'});
+          $('#statement').fadeIn(1000)
+        
+        if (myselect== 'default'){
+            $('#result').css({'background-color':'#cec9c9', 'border':'solid black 1px', 'padding': '34px', 'font-family': 'Rubik','margin':'0 auto','max-width':'480px','max-height':'274px',}); $('.above').css({'margin':'0px 10px 1px'}),
+          $('.below').css({'margin':'0px 10px 15px'}), 
+          $('#result-name').css({'font-weight':'bold', 'font-size': '30px'}), 
+          $('#result-title').css({'font-size':'15px'}),
+          $('#result-email').css({'font-size':'18px'}),
+          $('#result-phone').css({'font-size':'15px'}),
+          $('#result-address').css({'font-size':'18px'}),
+          $('#result-web').css({'font-size':'15px'});
+        }else if(myselect== 'bright'){
+            $('#result').css({'background-color':'#eeeeee', 'border':'solid black 1px', 'padding': '34px', 'font-family': 'Lora','margin':'0 auto','max-width':'480px','max-height':'274px','color':'#83aef6'}); $('.above').css({'margin':'0px 10px 1px'}),
+          $('.below').css({'margin':'0px 10px 15px'}), 
+          $('#result-name').css({'font-weight':'bold', 'font-size': '30px'}), 
+          $('#result-title').css({'font-size':'15px'}),
+          $('#result-email').css({'font-size':'18px'}),
+          $('#result-phone').css({'font-size':'15px'}),
+          $('#result-address').css({'font-size':'18px'}),
+          $('#result-web').css({'font-size':'15px'});
+        }else if(myselect== 'dark'){
+            $('#result').css({'background-color':'#43474d', 'border':'solid black 1px', 'padding': '34px', 'font-family': 'Nunito','margin':'0 auto','max-width':'480px','max-height':'274px','color':'white'}); $('.above').css({'margin':'0px 10px 1px'}),
+          $('.below').css({'margin':'0px 10px 15px'}), 
+          $('#result-name').css({'font-weight':'bold', 'font-size': '30px'}), 
+          $('#result-title').css({'font-size':'15px'}),
+          $('#result-email').css({'font-size':'18px'}),
+          $('#result-phone').css({'font-size':'15px'}),
+          $('#result-address').css({'font-size':'18px'}),
+          $('#result-web').css({'font-size':'15px'});
+        }else {}
       })
     });
   </script>
@@ -34,28 +71,29 @@
 <body>
     <div id='form'>
         <h2>Generator</h2>
-        Name:<input id=name><br>
-        <input id=><br>
-        <input id=><br>
-        <input id=><br>
-        <input id=><br>
-        <input id=><br>
+        Enter Your Information for Your Desired Business Card<br><br>
+        Name:&nbsp&nbsp&nbsp&nbsp&nbsp<input id=name><br>
+        Title:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id=title><br>
+        Address:&nbsp<input id=address><br>
+        Phone:&nbsp&nbsp&nbsp&nbsp<input id=phone><br>
+        Email:&nbsp&nbsp&nbsp&nbsp&nbsp<input id=email><br>
+        Wedsite:&nbsp<input id=web><br>
         <select id = 'myselect'><br>
-            <option value='random'>Random</option>
-            <option value='wild'>Wild</option>
+            <option value='default'>Default</option>
             <option value='bright'>Bright</option>
             <option value='dark'>Dark</option>
-            <option value='plain'>Plain</option>
-            <option>Default</option>
         </select><br>
         <button>Comence</button>
     </div>
     
-    <p id='result'>Congrats</p>
+    <p id='statement'>Congratulations, you've made your Business Card</p>
     <div id='result'>
-        <h1></h1>
-        <h2></h2>
-        <h3></h3>
+        <p id= 'result-name' class= 'above'></p>
+        <p id= 'result-title' class= 'below'></p>
+        <p id= 'result-email' class= 'above'></p>
+        <p id= 'result-phone' class= 'below'></p>
+        <p id= 'result-address' class= 'above'></p>
+        <p id= 'result-web' class= 'below'></p>
     </div>
   
 </body>
